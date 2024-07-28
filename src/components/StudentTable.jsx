@@ -18,6 +18,7 @@ export default function StudentTable({ student, setStudent }) {
   // updatedStudent
   const handleUpdateStudent = (studntId) => {
     const studen = student.find((s) => s.id === studntId);
+    console.log(studen)
     setCurrentStudent(studen);
     setEditDilogOpen(true);
   };
@@ -37,6 +38,7 @@ export default function StudentTable({ student, setStudent }) {
   async function handleSaveStudent() {
     const studentDoc = doc(db, "students", currentStudent.id);
     await updateDoc(studentDoc, {
+      rollNo: currentStudent.rollNo,
       name: currentStudent.name,
       age: currentStudent.age,
     });

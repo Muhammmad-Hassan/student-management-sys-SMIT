@@ -31,6 +31,15 @@ export default function updatedStudent({editDilogOpen , currentStudent, handleDi
           />
           <TextField
             margin='dense'
+            name='rollNo'
+            label='Roll No'
+            type='text'
+            fullWidth
+            value={currentStudent?.rollNo || ''}
+            onChange={handleChange}
+          />
+          <TextField
+            margin='dense'
             name='age'
             label='Student Age'
             type='text'
